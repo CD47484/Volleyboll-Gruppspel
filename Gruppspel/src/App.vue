@@ -10,16 +10,19 @@
 <h1>Gruppspel</h1>
 
 <button class="container">
-<h3>Grupp 1</h3> <!--fetchar in grupperna-->
+<h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+<p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
 </button>
 
 <button class="container">
-
-<h3>Grupp 2 </h3> 
+<h3 class="Grupper">Grupp 2</h3>
+<p class="lag">IT21, IT23, IT22, IT24</p> 
 <p> ↓</p>
 </button>
+
 <button class="container">
-<h3>Grupp 3</h3>
+<h3 class="Grupper">Grupp 3</h3>
+<p class="lag">IT21, IT23, IT22, IT24</p>
 </button>
 
 </main>
@@ -44,7 +47,11 @@
   right: 0%;
   background-color: darkblue;
 }
-h3{
+.Grupper{
+  color: black;
+  text-align: left;
+}
+.Lag{
   color: black;
   text-align: left;
 }
