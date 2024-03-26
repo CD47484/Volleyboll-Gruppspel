@@ -6,18 +6,21 @@
 <nav id="nav">Massor med saker</nav>
 
 <main id="main">
+  
 <h1>Gruppspel</h1>
-<br>
 
+<button class="container">
 <h3>Grupp 1</h3> <!--fetchar in grupperna-->
+</button>
 
-<br>
-
+<button class="container">
 <h3>Grupp 2</h3> 
+</button>
 
-<br>
-
+<button class="container">
 <h3>Grupp 3</h3>
+</button>
+
 </main>
 </template>
 
@@ -39,5 +42,18 @@
   left: 0%;
   right: 0%;
   background-color: darkblue;
+}
+h3{
+  color: black;
+}
+.container {
+  position: relative;
+  left: 5%;
+  right: 5%;
+  margin: 5%;
+  height: 50px;
+  width: 300px;
+  align-items: center;
+  background-color: white;
 }
 </style>
