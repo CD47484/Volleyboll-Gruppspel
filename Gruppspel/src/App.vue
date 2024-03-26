@@ -6,7 +6,7 @@
 <nav id="nav">Massor med saker</nav>
 
 <main id="main">
-  
+
 <h1>Gruppspel</h1>
 
 <button class="container">
@@ -14,9 +14,10 @@
 </button>
 
 <button class="container">
-<h3>Grupp 2</h3> 
-</button>
 
+<h3>Grupp 2 </h3> 
+<p> ↓</p>
+</button>
 <button class="container">
 <h3>Grupp 3</h3>
 </button>
@@ -45,6 +46,7 @@
 }
 h3{
   color: black;
+  text-align: left;
 }
 .container {
   position: relative;
