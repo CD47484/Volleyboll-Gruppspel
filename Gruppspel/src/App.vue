@@ -53,7 +53,7 @@
   color: black;
   text-align: left;
 }
-.Lag{
+.lag{
   color: black;
   text-align: left;
 }
