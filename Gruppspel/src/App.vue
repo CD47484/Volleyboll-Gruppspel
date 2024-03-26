@@ -12,17 +12,19 @@
 <button class="container">
 <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
 <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+<p class="pil"> ↓</p>
 </button>
 
 <button class="container">
 <h3 class="Grupper">Grupp 2</h3>
 <p class="lag">IT21, IT23, IT22, IT24</p> 
-<p> ↓</p>
+<p class="pil"> ↓</p>
 </button>
 
 <button class="container">
 <h3 class="Grupper">Grupp 3</h3>
 <p class="lag">IT21, IT23, IT22, IT24</p>
+<p class="pil"> ↓</p>
 </button>
 
 </main>
@@ -64,5 +66,12 @@
   width: 300px;
   align-items: center;
   background-color: white;
+}
+.pil{
+  position: relative;
+  width: 50px;
+  left: 80%;
+  bottom: 60%;
+  font-size: 25px;
 }
 </style>
