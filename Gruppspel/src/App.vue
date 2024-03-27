@@ -99,6 +99,8 @@ export default {
   position: relative;
   color: black;
   text-align: left;
+  top: 0.6em;
+  font-size: 17px;
 }
 .group-container {
   position: relative;
