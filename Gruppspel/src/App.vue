@@ -25,14 +25,20 @@ export default {
 </script>
 
 <template>
-<nav id="nav">Massor med saker</nav>
+  <nav id="nav">Massor med saker</nav>
 
-<main id="main">
+  <main id="main">
 
   <h1>Gruppspel</h1>
 
+  <div class="search-container">
+    <input type="text" class="search" placeholder="Search..">
+    <button class="search-btn"></button>
+  </div>
+
+ 
   <div>
-    <button @click="toggleVisibility" class="container">
+    <button @click="toggleVisibility" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p> ↓</p>
@@ -43,7 +49,7 @@ export default {
   </div>
 
   <div>
-    <button @click="toggleVisibility2" class="container">
+    <button @click="toggleVisibility2" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p> ↓</p>
@@ -54,7 +60,7 @@ export default {
   </div>
 
   <div>
-    <button @click="toggleVisibility3" class="container">
+    <button @click="toggleVisibility3" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p> ↓</p>
@@ -64,7 +70,7 @@ export default {
     </div>
   </div>
 
-</main>
+  </main>
 </template>
 
 <style scoped>
@@ -94,13 +100,13 @@ export default {
   color: black;
   text-align: left;
 }
-.container {
+.group-container {
   position: relative;
   left: 5%;
   right: 5%;
   margin: 5%;
   height: 50px;
-  width: 300px;
+  width: 80%;
   align-items: center;
   background-color: white;
 }
@@ -110,5 +116,23 @@ export default {
   left: 80%;
   bottom: 60%;
   font-size: 25px;
+}
+.search{
+  position: relative;
+  left: 5%;
+  right: 5%;
+  margin: 5%;
+  height: 30px;
+  width: 65%;
+  align-items: center;
+  background-color: white;
+}
+.search-btn{
+  position: relative;
+  margin: 5%;
+  height: 30px;
+  width: 10%;
+  align-items: center;
+  background-color: white;
 }
 </style>
