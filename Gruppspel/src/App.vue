@@ -53,7 +53,7 @@ export default {
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p> ↓</p>
     </button>
-    <div v-if="isVisible2">
+    <div v-if="isVisible2" class="">
       Hej!
     </div>
   </div>
