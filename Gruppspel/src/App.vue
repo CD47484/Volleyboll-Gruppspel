@@ -92,10 +92,16 @@ export default {
 .Grupper{
   color: black;
   text-align: left;
+  width: fit-content;
+  font-size: 20px;
 }
 .lag{
+  position: relative;
   color: black;
   text-align: left;
+  width: fit-content;
+  font-size: 17px;
+  top: 0.6em;
 }
 .group-container {
   position: relative;
@@ -121,7 +127,7 @@ export default {
   position: relative;
   width: 50px;
   left: 80%;
-  bottom: 60%;
+  top: -0.8em;
   font-size: 25px;
 }
 .search-container {
