@@ -123,6 +123,7 @@ export default {
   width: 80%;
   align-items: center;
   background-color: white;
+  color: black;
 }
 .pil{
   position: relative;
