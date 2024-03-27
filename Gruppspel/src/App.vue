@@ -35,22 +35,34 @@ export default {
     <button @click="toggleVisibility" class="container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <p> ↓</p>
     </button>
     <div v-if="isVisible">
       Hej!
     </div>
   </div>
 
-<button class="container">
-<h3 class="Grupper">Grupp 2</h3>
-<p class="lag">IT21, IT23, IT22, IT24</p> 
-<p> ↓</p>
-</button>
+  <div>
+    <button @click="toggleVisibility2" class="container">
+      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <p> ↓</p>
+    </button>
+    <div v-if="isVisible2">
+      Hej!
+    </div>
+  </div>
 
-<button class="container">
-<h3 class="Grupper">Grupp 3</h3>
-<p class="lag">IT21, IT23, IT22, IT24</p>
-</button>
+  <div>
+    <button @click="toggleVisibility3" class="container">
+      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <p> ↓</p>
+    </button>
+    <div v-if="isVisible3">
+      Hej!
+    </div>
+  </div>
 
 </main>
 </template>
