@@ -150,9 +150,9 @@ export default {
 }
 .search-btn{
   position: relative;
-  right: 5%;
+  right: -5.2%;
   margin: -5%;
-  top: 35%;
+  top: 5%;
   height: 30px;
   width: 15%;
   align-items: center;
