@@ -1,4 +1,26 @@
-<script setup>
+<script>
+
+export default {
+  name: 'App',
+  data() {
+    return {
+      isVisible: false,
+      isVisible2: false,
+      isVisible3: false,
+    };
+  },
+  methods: {
+    toggleVisibility() {
+      this.isVisible = !this.isVisible;
+    },
+    toggleVisibility2() {
+      this.isVisible2 = !this.isVisible2;
+    },
+    toggleVisibility3() {
+      this.isVisible3 = !this.isVisible3;
+    },
+  },
+};
 
 </script>
 
@@ -7,24 +29,38 @@
 
 <main id="main">
 
-<h1>Gruppspel</h1>
+  <h1>Gruppspel</h1>
 
-<button class="container">
-<h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
-<p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-</button>
+  <div>
+    <button @click="toggleVisibility" class="container">
+      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+    </button>
+    <div v-if="isVisible">
+      Hej!
+    </div>
+  </div>
 
-<button class="container">
-<h3 class="Grupper">Grupp 2</h3>
-<p class="lag">IT21, IT23, IT22, IT24</p> 
-<p> ↓</p>
-</button>
+  <div>
+    <button @click="toggleVisibility2" class="container">
+      <h3 class="Grupper">Grupp 2</h3>
+      <p class="lag">IT21, IT23, IT22, IT24</p> 
+      <p> ↓</p>
+    </button>
+    <div v-if="isVisible2">
+      Cipi!
+    </div>
+  </div>
 
-<button class="container">
-<h3 class="Grupper">Grupp 3</h3>
-<p class="lag">IT21, IT23, IT22, IT24</p>
-</button>
-
+  <div>
+    <button @click="toggleVisibility3" class="container">
+      <h3 class="Grupper">Grupp 3</h3>
+      <p class="lag">IT21, IT23, IT22, IT24</p>
+    </button>
+    <div v-if="isVisible3">
+      Lucas är bög!!
+    </div>  
+</div>
 </main>
 </template>
 
