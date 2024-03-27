@@ -1,4 +1,26 @@
-<script setup>
+<script>
+
+export default {
+  name: 'App',
+  data() {
+    return {
+      isVisible: false,
+      isVisible2: false,
+      isVisible3: false,
+    };
+  },
+  methods: {
+    toggleVisibility() {
+      this.isVisible = !this.isVisible;
+    },
+    toggleVisibility2() {
+      this.isVisible2 = !this.isVisible2;
+    },
+    toggleVisibility3() {
+      this.isVisible3 = !this.isVisible3;
+    },
+  },
+};
 
 </script>
 
@@ -14,23 +36,39 @@
     <button class="search-btn"></button>
   </div>
 
-  <button class="group-container">
-    <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
-    <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-    <p class="pil"> ↓</p>
-  </button>
+ 
+  <div>
+    <button @click="toggleVisibility" class="group-container">
+      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <p> ↓</p>
+    </button>
+    <div v-if="isVisible">
+      Hej!
+    </div>
+  </div>
 
-  <button class="group-container">
-    <h3 class="Grupper">Grupp 2</h3>
-    <p class="lag">IT21, IT23, IT22, IT24</p> 
-    <p class="pil"> ↓</p>
-  </button>
+  <div>
+    <button @click="toggleVisibility2" class="group-container">
+      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <p> ↓</p>
+    </button>
+    <div v-if="isVisible2">
+      Hej!
+    </div>
+  </div>
 
-  <button class="group-container">
-    <h3 class="Grupper">Grupp 3</h3>
-    <p class="lag">IT21, IT23, IT22, IT24</p>
-    <p class="pil"> ↓</p>
-  </button>
+  <div>
+    <button @click="toggleVisibility3" class="group-container">
+      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <p> ↓</p>
+    </button>
+    <div v-if="isVisible3">
+      Hej!
+    </div>
+  </div>
 
   </main>
 </template>
@@ -62,7 +100,7 @@
   color: black;
   text-align: left;
 }
-.container {
+.group-container {
   position: relative;
   left: 5%;
   right: 5%;
