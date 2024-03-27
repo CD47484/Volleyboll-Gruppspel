@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <nav id="nav">Massor med saker</nav>
+  <nav id="nav">Massor med saker / NAV</nav>
 
   <main id="main">
 
@@ -41,9 +41,9 @@ export default {
     <button @click="toggleVisibility" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p> ↓</p>
+      <p class="pil"> ↓</p>
     </button>
-    <div v-if="isVisible">
+    <div v-if="isVisible" class="group-dropdown">
       Hej!
     </div>
   </div>
@@ -52,9 +52,9 @@ export default {
     <button @click="toggleVisibility2" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p> ↓</p>
+      <p class="pil"> ↓</p>
     </button>
-    <div v-if="isVisible2" class="">
+    <div v-if="isVisible2" class="group-dropdown">
       Hej!
     </div>
   </div>
@@ -63,9 +63,9 @@ export default {
     <button @click="toggleVisibility3" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p> ↓</p>
+      <p class="pil"> ↓</p>
     </button>
-    <div v-if="isVisible3">
+    <div v-if="isVisible3" class="group-dropdown">
       Hej!
     </div>
   </div>
@@ -103,9 +103,19 @@ export default {
 .group-container {
   position: relative;
   left: 5%;
-  right: 5%;
   margin: 5%;
-  height: 50px;
+  margin-bottom: 1.5%;
+  height: 10%;
+  width: 80%;
+  align-items: center;
+  background-color: white;
+}
+.group-dropdown {
+  position: relative;
+  left: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  height: 75px;
   width: 80%;
   align-items: center;
   background-color: white;
