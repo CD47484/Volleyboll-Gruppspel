@@ -127,7 +127,7 @@ export default {
 }
 .search-input{
   position: relative;
-  left: 5%;
+  right: -5%;
   margin: 5%;
   height: 30px;
   width: 70%;
@@ -135,7 +135,7 @@ export default {
 }
 .search-btn{
   position: relative;
-  left: 5%;
+  right: 5%;
   margin: -5%;
   top: 35%;
   height: 30px;
