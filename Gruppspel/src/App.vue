@@ -29,8 +29,6 @@ export default {
 
   <main id="main">
 
-  <h1>Gruppspel</h1>
-
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Search..">
     <button class="search-btn"></button>
