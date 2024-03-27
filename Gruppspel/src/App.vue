@@ -47,7 +47,7 @@ export default {
 
   <div>
     <button @click="toggleVisibility2" class="group-container">
-      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <h3 class="Grupper">Grupp 2</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p class="pil"> ↓</p>
     </button>
@@ -58,7 +58,7 @@ export default {
 
   <div>
     <button @click="toggleVisibility3" class="group-container">
-      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <h3 class="Grupper">Grupp 3</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p class="pil"> ↓</p>
     </button>
@@ -99,9 +99,6 @@ export default {
   position: relative;
   color: black;
   text-align: left;
-  width: fit-content;
-  font-size: 17px;
-  top: 0.6em;
 }
 .group-container {
   position: relative;
@@ -127,7 +124,7 @@ export default {
   position: relative;
   width: 50px;
   left: 80%;
-  top: -0.8em;
+  bottom: 60%;
   font-size: 25px;
 }
 .search-container {
