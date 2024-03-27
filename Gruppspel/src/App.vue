@@ -94,6 +94,7 @@ export default {
   text-align: left;
   width: fit-content;
   font-size: 20px;
+  width: fit-content;
 }
 .lag{
   position: relative;
@@ -101,6 +102,7 @@ export default {
   text-align: left;
   top: 0.6em;
   font-size: 17px;
+  width: fit-content;
 }
 .group-container {
   position: relative;
@@ -126,7 +128,7 @@ export default {
   position: relative;
   width: 50px;
   left: 80%;
-  bottom: 60%;
+  bottom: 0.8em;
   font-size: 25px;
 }
 .search-container {
