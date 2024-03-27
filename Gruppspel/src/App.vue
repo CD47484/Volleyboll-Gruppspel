@@ -3,31 +3,32 @@
 </script>
 
 <template>
-<nav id="nav">Massor med saker</nav>
+  <nav id="nav">Massor med saker</nav>
 
-<main id="main">
+  <main id="main">
 
-<h1>Gruppspel</h1>
+  <h1>Gruppspel</h1>
 
-<button class="container">
-<h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
-<p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-<p class="pil"> ↓</p>
-</button>
 
-<button class="container">
-<h3 class="Grupper">Grupp 2</h3>
-<p class="lag">IT21, IT23, IT22, IT24</p> 
-<p class="pil"> ↓</p>
-</button>
+  <button class="container">
+    <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+    <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+    <p class="pil"> ↓</p>
+  </button>
 
-<button class="container">
-<h3 class="Grupper">Grupp 3</h3>
-<p class="lag">IT21, IT23, IT22, IT24</p>
-<p class="pil"> ↓</p>
-</button>
+  <button class="container">
+    <h3 class="Grupper">Grupp 2</h3>
+    <p class="lag">IT21, IT23, IT22, IT24</p> 
+    <p class="pil"> ↓</p>
+  </button>
 
-</main>
+  <button class="container">
+    <h3 class="Grupper">Grupp 3</h3>
+    <p class="lag">IT21, IT23, IT22, IT24</p>
+    <p class="pil"> ↓</p>
+  </button>
+
+  </main>
 </template>
 
 <style scoped>
@@ -63,7 +64,7 @@
   right: 5%;
   margin: 5%;
   height: 50px;
-  width: 300px;
+  width: 80%;
   align-items: center;
   background-color: white;
 }
