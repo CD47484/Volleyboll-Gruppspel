@@ -29,14 +29,11 @@ export default {
 
   <main id="main">
 
-  <h1>Gruppspel</h1>
-
   <div class="search-container">
-    <input type="text" class="search" placeholder="Search..">
+    <input type="text" class="search-input" placeholder="Search..">
     <button class="search-btn"></button>
   </div>
 
- 
   <div>
     <button @click="toggleVisibility" class="group-container">
       <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
@@ -127,22 +124,31 @@ export default {
   bottom: 60%;
   font-size: 25px;
 }
-.search{
+.search-container {
   position: relative;
   left: 5%;
   right: 5%;
   margin: 5%;
-  height: 30px;
-  width: 65%;
+  height: 20px;
+  width: 80%;
   align-items: center;
-  background-color: white;
+}
+.search-input{
+  position: relative;
+  right: -5%;
+  margin: 5%;
+  height: 30px;
+  width: 70%;
+  align-items: center;
 }
 .search-btn{
   position: relative;
-  margin: 5%;
+  right: 5%;
+  margin: -5%;
+  top: 35%;
   height: 30px;
-  width: 10%;
+  width: 15%;
   align-items: center;
-  background-color: white;
 }
+
 </style>
