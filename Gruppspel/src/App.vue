@@ -41,26 +41,17 @@ export default {
     </div>
   </div>
 
-  <div>
-    <button @click="toggleVisibility2" class="container">
-      <h3 class="Grupper">Grupp 2</h3>
-      <p class="lag">IT21, IT23, IT22, IT24</p> 
-      <p> ↓</p>
-    </button>
-    <div v-if="isVisible2">
-      Cipi!
-    </div>
-  </div>
+<button class="container">
+<h3 class="Grupper">Grupp 2</h3>
+<p class="lag">IT21, IT23, IT22, IT24</p> 
+<p> ↓</p>
+</button>
 
-  <div>
-    <button @click="toggleVisibility3" class="container">
-      <h3 class="Grupper">Grupp 3</h3>
-      <p class="lag">IT21, IT23, IT22, IT24</p>
-    </button>
-    <div v-if="isVisible3">
-      Lucas är bög!!
-    </div>  
-</div>
+<button class="container">
+<h3 class="Grupper">Grupp 3</h3>
+<p class="lag">IT21, IT23, IT22, IT24</p>
+</button>
+
 </main>
 </template>
 
@@ -100,5 +91,12 @@ export default {
   width: 300px;
   align-items: center;
   background-color: white;
+}
+.pil{
+  position: relative;
+  width: 50px;
+  left: 80%;
+  bottom: 60%;
+  font-size: 25px;
 }
 </style>
