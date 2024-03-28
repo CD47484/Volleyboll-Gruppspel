@@ -7,6 +7,24 @@ export default {
       isVisible: false,
       isVisible2: false,
       isVisible3: false,
+      groupAData: [
+        { pos: 1, team: 'IT23', p: 5, w: 4, l: 0, pd: 61, pts: 13 },
+        { pos: 2, team: 'Merk23', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
+        { pos: 3, team: 'Kock23', p: 5, w: 4, l: 0, pd: 61, pts: 7 },
+        { pos: 4, team: 'Serv23', p: 5, w: 4, l: 0, pd: 61, pts: 2 },
+      ],
+      groupBData: [
+        { pos: 1, team: 'IT22', p: 5, w: 3, l: 1, pd: 19, pts: 14 },
+        { pos: 2, team: 'Merk22', p: 5, w: 4, l: 0, pd: 61, pts: 8 },
+        { pos: 3, team: 'Kock22', p: 5, w: 4, l: 0, pd: 61, pts: 5 },
+        { pos: 4, team: 'Serv22', p: 5, w: 4, l: 0, pd: 61, pts: 2 },
+      ],
+      groupCData: [
+        { pos: 1, team: 'IT21', p: 5, w: 4, l: 0, pd: 61, pts: 13 },
+        { pos: 2, team: 'Merk21', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
+        { pos: 3, team: 'Kock21', p: 5, w: 4, l: 0, pd: 61, pts: 4 },
+        { pos: 4, team: 'Serv21', p: 5, w: 4, l: 0, pd: 61, pts: 1 },
+      ]
     };
   },
   methods: {
@@ -19,7 +37,29 @@ export default {
     toggleVisibility3() {
       this.isVisible3 = !this.isVisible3;
     },
+    mounted() {
+    this.populateTable('groupA', this.groupAData);
+    this.populateTable('groupB', this.groupBData);
+    this.populateTable('groupC', this.groupCData);
   },
+  methods: {
+    populateTable(tableId, data) {
+      // Use Vue's nextTick to ensure the DOM has updated and to access the updated this.$el
+      this.$nextTick(() => {
+        let table = this.$el.querySelector(`#${tableId}`);
+        if (table) {
+          data.forEach((rowData) => {
+            let row = table.insertRow(-1);
+            Object.values(rowData).forEach((cellData) => {
+              let cell = row.insertCell();
+              cell.textContent = cellData;
+            });
+          });
+        }
+      });
+    },
+  },
+},
 };
 
 </script>
@@ -36,12 +76,31 @@ export default {
 
   <div>
     <button @click="toggleVisibility" class="group-container">
-      <h3 class="Grupper">Grupp 1</h3> <!--fetchar in grupperna-->
+      <h3 class="Grupper">Grupp A</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p class="pil"> ↓</p>
     </button>
     <div v-if="isVisible" class="group-dropdown">
-      Hej!
+      <table id="groupA">
+        <tr>
+          <th>Pos</th>
+          <th>Team</th>
+          <th>P</th>
+          <th>W</th>
+          <th>L</th>
+          <th>PD</th>
+          <th>PTS</th>
+        </tr>
+        <tr v-for="item in groupAData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -52,7 +111,26 @@ export default {
       <p class="pil"> ↓</p>
     </button>
     <div v-if="isVisible2" class="group-dropdown">
-      Hej!
+      <table id="groupB">
+        <tr>
+          <th>Pos</th>
+          <th>Team</th>
+          <th>P</th>
+          <th>W</th>
+          <th>L</th>
+          <th>PD</th>
+          <th>PTS</th>
+        </tr>
+        <tr v-for="item in groupBData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -63,7 +141,26 @@ export default {
       <p class="pil"> ↓</p>
     </button>
     <div v-if="isVisible3" class="group-dropdown">
-      Hej!
+      <table id="groupB">
+        <tr>
+          <th>Pos</th>
+          <th>Team</th>
+          <th>P</th>
+          <th>W</th>
+          <th>L</th>
+          <th>PD</th>
+          <th>PTS</th>
+        </tr>
+        <tr v-for="item in groupBData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -119,7 +216,7 @@ export default {
   left: 5%;
   margin-left: 5%;
   margin-bottom: 5%;
-  height: 75px;
+  height: fit-content;
   width: 80%;
   align-items: center;
   background-color: white;
