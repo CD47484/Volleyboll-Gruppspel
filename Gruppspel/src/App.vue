@@ -78,7 +78,7 @@ export default {
     <button @click="toggleVisibility" class="group-container">
       <h3 class="Grupper">Grupp A</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p class="pil"> ↓</p>
+      <img class="pil" src="/assets/pngwing.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible" class="group-dropdown">
       <table id="groupA">
@@ -108,7 +108,7 @@ export default {
     <button @click="toggleVisibility2" class="group-container">
       <h3 class="Grupper">Grupp B</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p class="pil"> ↓</p>
+      <p class="pil"> V</p>
     </button>
     <div v-if="isVisible2" class="group-dropdown">
       <table id="groupB">
@@ -138,7 +138,7 @@ export default {
     <button @click="toggleVisibility3" class="group-container">
       <h3 class="Grupper">Grupp C</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p class="pil"> ↓</p>
+      <p class="pil"> V</p>
     </button>
     <div v-if="isVisible3" class="group-dropdown">
       <table id="groupC">
@@ -192,7 +192,7 @@ export default {
   text-align: left;
   width: fit-content;
   font-size: 20px;
-  left: 30%;
+  left: 40%;
   width: fit-content;
 }
 .lag{
@@ -200,7 +200,7 @@ export default {
   color: black;
   text-align: left;
   top: 0.6em;
-  left: 15%;
+  left: 20%;
   font-size: 17px;
   width: fit-content;
 }
@@ -213,6 +213,8 @@ export default {
   width: 80%;
   align-items: center;
   background-color: white;
+  border-radius: 10px;
+  
 }
 .group-dropdown {
   position: relative;
@@ -224,11 +226,12 @@ export default {
   align-items: center;
   background-color: white;
   color: black;
+  border-radius: 10px;
 }
 .pil{
   position: relative;
   width: 50px;
-  left: 80%;
+  left: 83%;
   bottom: 0.8em;
   font-size: 25px;
 }
@@ -248,6 +251,7 @@ export default {
   height: 30px;
   width: 70%;
   align-items: center;
+  border-radius: 7px;
 }
 .search-btn{
   position: relative;
@@ -257,6 +261,7 @@ export default {
   height: 30px;
   width: 15%;
   align-items: center;
+  border-radius: 7px;
 }
 
 /* Apply border to the table and its cells */
