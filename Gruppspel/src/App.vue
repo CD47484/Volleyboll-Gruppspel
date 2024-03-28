@@ -8,22 +8,22 @@ export default {
       isVisible2: false,
       isVisible3: false,
       groupAData: [
-        { pos: 1, team: 'IT23', p: 5, w: 4, l: 0, pd: 61, pts: 13 },
-        { pos: 2, team: 'Merk23', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
-        { pos: 3, team: 'Kock23', p: 5, w: 4, l: 0, pd: 61, pts: 7 },
-        { pos: 4, team: 'Serv23', p: 5, w: 4, l: 0, pd: 61, pts: 2 },
+        { pos: 1, team: 'IT23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 13 },//Fetch in namn, hur många matcher de spelat, vunnit, förlorat, poäng för, poäng mot räknar ut poäng skillnad, poäng
+        { pos: 2, team: 'Merk23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 10 },
+        { pos: 3, team: 'Kock23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 7 },
+        { pos: 4, team: 'Serv23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 2 },
       ],
       groupBData: [
-        { pos: 1, team: 'IT22', p: 5, w: 3, l: 1, pd: 19, pts: 14 },
-        { pos: 2, team: 'Merk22', p: 5, w: 4, l: 0, pd: 61, pts: 8 },
-        { pos: 3, team: 'Kock22', p: 5, w: 4, l: 0, pd: 61, pts: 5 },
-        { pos: 4, team: 'Serv22', p: 5, w: 4, l: 0, pd: 61, pts: 2 },
+        { pos: 1, team: 'IT22', p: 5, w: 3, l: 1, pf: 160, pa: 99, pd: 19, pts: 14 },
+        { pos: 2, team: 'Merk22', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 8 },
+        { pos: 3, team: 'Kock22', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 5 },
+        { pos: 4, team: 'Serv22', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 2 },
       ],
       groupCData: [
-        { pos: 1, team: 'IT21', p: 5, w: 4, l: 0, pd: 61, pts: 13 },
-        { pos: 2, team: 'Merk21', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
-        { pos: 3, team: 'Kock21', p: 5, w: 4, l: 0, pd: 61, pts: 4 },
-        { pos: 4, team: 'Serv21', p: 5, w: 4, l: 0, pd: 61, pts: 1 },
+        { pos: 1, team: 'IT21', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 13 },
+        { pos: 2, team: 'Merk21', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 10 },
+        { pos: 3, team: 'Kock21', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 4 },
+        { pos: 4, team: 'Serv21', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 1 },
       ]
     };
   },
@@ -83,13 +83,15 @@ export default {
     <div v-if="isVisible" class="group-dropdown">
       <table id="groupA">
         <tr>
-          <th>Pos</th>
-          <th>Team</th>
-          <th>P</th>
-          <th>W</th>
-          <th>L</th>
-          <th>PD</th>
-          <th>PTS</th>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PF</th>
+          <th>PM</th>
+          <th>PS</th>
+          <th>POÄ</th>
         </tr>
         <tr v-for="item in groupAData" :key="item.pos">
           <td>{{ item.pos }}</td>
@@ -97,6 +99,8 @@ export default {
           <td>{{ item.p }}</td>
           <td>{{ item.w }}</td>
           <td>{{ item.l }}</td>
+          <td>{{ item.pf }}</td>
+          <td>{{ item.pa }}</td>
           <td>{{ item.pd }}</td>
           <td>{{ item.pts }}</td>
         </tr>
@@ -113,13 +117,15 @@ export default {
     <div v-if="isVisible2" class="group-dropdown">
       <table id="groupB">
         <tr>
-          <th>Pos</th>
-          <th>Team</th>
-          <th>P</th>
-          <th>W</th>
-          <th>L</th>
-          <th>PD</th>
-          <th>PTS</th>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PF</th>
+          <th>PM</th>
+          <th>PS</th>
+          <th>POÄ</th>
         </tr>
         <tr v-for="item in groupBData" :key="item.pos">
           <td>{{ item.pos }}</td>
@@ -127,6 +133,8 @@ export default {
           <td>{{ item.p }}</td>
           <td>{{ item.w }}</td>
           <td>{{ item.l }}</td>
+          <td>{{ item.pf }}</td>
+          <td>{{ item.pa }}</td>
           <td>{{ item.pd }}</td>
           <td>{{ item.pts }}</td>
         </tr>
@@ -143,13 +151,15 @@ export default {
     <div v-if="isVisible3" class="group-dropdown">
       <table id="groupB">
         <tr>
-          <th>Pos</th>
-          <th>Team</th>
-          <th>P</th>
-          <th>W</th>
-          <th>L</th>
-          <th>PD</th>
-          <th>PTS</th>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PF</th>
+          <th>PM</th>
+          <th>PS</th>
+          <th>POÄ</th>
         </tr>
         <tr v-for="item in groupBData" :key="item.pos">
           <td>{{ item.pos }}</td>
@@ -157,6 +167,8 @@ export default {
           <td>{{ item.p }}</td>
           <td>{{ item.w }}</td>
           <td>{{ item.l }}</td>
+          <td>{{ item.pf }}</td>
+          <td>{{ item.pa }}</td>
           <td>{{ item.pd }}</td>
           <td>{{ item.pts }}</td>
         </tr>
