@@ -193,14 +193,15 @@ export default {
   width: fit-content;
   font-size: 20px;
   left: 40%;
+  top: 0.6em;
   width: fit-content;
 }
 .lag{
   position: relative;
   color: black;
   text-align: left;
-  top: 0.6em;
   left: 20%;
+  top: 1em;
   font-size: 17px;
   width: fit-content;
 }
