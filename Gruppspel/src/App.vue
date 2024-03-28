@@ -8,7 +8,7 @@ export default {
       isVisible2: false,
       isVisible3: false,
       groupAData: [
-        { pos: 1, team: 'IT23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 13 },//Fetch in namn, hur många matcher de spelat, vunnit, förlorat, poäng för, poäng mot räknar ut poäng skillnad, poäng
+        { pos: 1, team: 'IT23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd:61 , pts: 13 },//Fetch in namn, hur många matcher de spelat, vunnit, förlorat, poäng för, poäng mot räknar ut poäng skillnad, poäng
         { pos: 2, team: 'Merk23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 10 },
         { pos: 3, team: 'Kock23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 7 },
         { pos: 4, team: 'Serv23', p: 5, w: 4, l: 0, pf: 160, pa: 99, pd: 61, pts: 2 },
@@ -110,7 +110,7 @@ export default {
 
   <div>
     <button @click="toggleVisibility2" class="group-container">
-      <h3 class="Grupper">Grupp 2</h3> <!--fetchar in grupperna-->
+      <h3 class="Grupper">Grupp B</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p class="pil"> ↓</p>
     </button>
@@ -144,12 +144,12 @@ export default {
 
   <div>
     <button @click="toggleVisibility3" class="group-container">
-      <h3 class="Grupper">Grupp 3</h3> <!--fetchar in grupperna-->
+      <h3 class="Grupper">Grupp C</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <p class="pil"> ↓</p>
     </button>
     <div v-if="isVisible3" class="group-dropdown">
-      <table id="groupB">
+      <table id="groupC">
         <tr>
           <th>POS</th>
           <th>LAG</th>
@@ -199,10 +199,12 @@ export default {
   background-color: darkblue;
 }
 .Grupper{
+  position: relative;
   color: black;
   text-align: left;
   width: fit-content;
   font-size: 20px;
+  left: 30%;
   width: fit-content;
 }
 .lag{
@@ -210,6 +212,7 @@ export default {
   color: black;
   text-align: left;
   top: 0.6em;
+  left: 15%;
   font-size: 17px;
   width: fit-content;
 }
@@ -283,5 +286,7 @@ th, tr {
 th:last-child, td:last-child, tr:last-child {
   border-right: none;
 }
-
+td {
+  text-align: center;
+}
 </style>
