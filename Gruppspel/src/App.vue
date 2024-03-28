@@ -78,7 +78,7 @@ export default {
     <button @click="toggleVisibility" class="group-container">
       <h3 class="Grupper">Grupp A</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="/assets/pngwing.png" alt="dropdown-pil">
+      <img class="pil" src="./assets/pngwing.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible" class="group-dropdown">
       <table id="groupA">
@@ -108,7 +108,7 @@ export default {
     <button @click="toggleVisibility2" class="group-container">
       <h3 class="Grupper">Grupp B</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p class="pil"> V</p>
+      <img class="pil" src="./assets/pngwing.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible2" class="group-dropdown">
       <table id="groupB">
@@ -138,7 +138,7 @@ export default {
     <button @click="toggleVisibility3" class="group-container">
       <h3 class="Grupper">Grupp C</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <p class="pil"> V</p>
+      <img class="pil" src="./assets/pngwing.png" alt="dropdown-pil">
     </button>
     <div v-if="isVisible3" class="group-dropdown">
       <table id="groupC">
@@ -231,9 +231,10 @@ export default {
 .pil{
   position: relative;
   width: 50px;
-  left: 83%;
+  height: 30px;
+  left: 39%;
   bottom: 0.8em;
-  font-size: 25px;
+  font-size: 20px;
 }
 .search-container {
   position: relative;
