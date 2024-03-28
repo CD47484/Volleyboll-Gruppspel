@@ -268,4 +268,20 @@ export default {
   align-items: center;
 }
 
+/* Apply border to the table and its cells */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Collapses borders between table cells */
+}
+
+/* Apply horizontal border to table header and table rows */
+th, tr {
+  border-bottom: 1px solid black;
+}
+
+/* Remove right border from the last header cell and last data cell in each row */
+th:last-child, td:last-child, tr:last-child {
+  border-right: none;
+}
+
 </style>
