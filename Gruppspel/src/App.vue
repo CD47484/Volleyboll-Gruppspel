@@ -27,6 +27,11 @@ export default {
       ]
     };
   },
+  mounted() {
+    this.populateTable('groupA', this.groupAData);
+    this.populateTable('groupB', this.groupBData);
+    this.populateTable('groupC', this.groupCData);
+  },
   methods: {
     toggleVisibility() {
       this.isVisible = !this.isVisible;
@@ -37,31 +42,32 @@ export default {
     toggleVisibility3() {
       this.isVisible3 = !this.isVisible3;
     },
-    mounted() {
-    this.populateTable('groupA', this.groupAData);
-    this.populateTable('groupB', this.groupBData);
-    this.populateTable('groupC', this.groupCData);
-  },
-  methods: {
     populateTable(tableId, data) {
-      // Use Vue's nextTick to ensure the DOM has updated and to access the updated this.$el
-      this.$nextTick(() => {
-        let table = this.$el.querySelector(`#${tableId}`);
-        if (table) {
-          data.forEach((rowData) => {
-            let row = table.insertRow(-1);
-            Object.values(rowData).forEach((cellData) => {
-              let cell = row.insertCell();
-              cell.textContent = cellData;
-            });
-          });
-        }
+    this.$nextTick(() => {
+      let tableElement = document.getElementById(tableId);
+      if (!tableElement) {
+        console.error(`Table with id ${tableId} not found.`);
+        return;
+      }
+      data.forEach((rowData) => {
+        let row = tableElement.insertRow();
+        Object.values(rowData).forEach((cellData) => {
+          let cell = row.insertCell();
+          cell.textContent = cellData;
+        });
       });
+    });
     },
-  },
-},
-};
-
+    showPopup() {
+      const myPopup = new Popup({
+        id: "my-popup",
+        title: "My First Popup",
+        content: "An example popup. Supports multiple lines."
+      });
+      myPopup.show();
+    }
+  }
+}
 </script>
 
 <template>
@@ -72,6 +78,7 @@ export default {
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Search..">
     <button class="search-btn">&#x1F50E</button>
+    <button @click="showPopup" class="popup-btn">Show Popup</button>
   </div>
 
   <div>
@@ -151,7 +158,7 @@ export default {
           <th>PS</th>
           <th>POÄ</th>
         </tr>
-        <tr v-for="item in groupBData" :key="item.pos">
+        <tr v-for="item in groupCData" :key="item.pos">
           <td>{{ item.pos }}</td>
           <td>{{ item.team }}</td>
           <td>{{ item.p }}</td>
@@ -264,6 +271,13 @@ export default {
   width: 15%;
   align-items: center;
   border-radius: 7px;
+}
+.popup-btn {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: brown;
+  top: 0%
+  /* Add more styles as needed */
 }
 
 /* Apply border to the table and its cells */
