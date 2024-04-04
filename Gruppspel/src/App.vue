@@ -71,7 +71,9 @@ export default {
 </script>
 
 <template>
-  <nav id="nav">Massor med saker / NAV</nav>
+  <nav id="nav">
+    <button class="hamburger"></button>   
+  </nav>
 
   <main id="main">
 
@@ -243,6 +245,13 @@ export default {
   left: 39%;
   bottom: 0.8em;
   font-size: 23px;
+}
+.hamburger{
+  background-image: url(./assets/hamburger.png);
+  position: relative;
+  width: 54px;
+  height: 47px;
+  left: 69%;
 }
 .search-container {
   position: relative;
