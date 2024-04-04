@@ -60,11 +60,42 @@ export default {
     },
     showPopup() {
       const myPopup = new Popup({
-        id: "my-popup",
-        title: "My First Popup",
-        content: "An example popup. Supports multiple lines."
+        id: "GruppA",
+        title: "Grupp A",
+        content: "An example popup. Supports multiple lines.",
+        CSS: `
+            .popup-content {
+                top: 0% ;
+                bottom: 0% ;
+            }`
       });
       myPopup.show();
+    },
+    showPopup2() {
+      const myPopup2 = new Popup({
+        id: "GruppB",
+        title: "Grupp B",
+        content: "An example popup. Supports multiple lines.",
+        CSS: `
+            .popup-content {
+                top: 0% ;
+                bottom: 0% ;
+            }`
+      });
+      myPopup2.show();
+    },
+    showPopup3() {
+      const myPopup3 = new Popup({
+        id: "GruppC",
+        title: "Grupp C",
+        content: "An example popup. Supports multiple lines.",
+        CSS: `
+            .popup-content {
+                top: 0% ;
+                bottom: 0% ;
+            }`
+      });
+      myPopup3.show();
     }
   }
 }
@@ -80,7 +111,6 @@ export default {
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Search..">
     <button class="search-btn">&#x1F50E</button>
-    <button @click="showPopup" class="popup-btn">Show Popup</button>
   </div>
 
   <div>
@@ -110,6 +140,7 @@ export default {
           <td>{{ item.pts }}</td>
         </tr>
       </table>
+      <button @click="showPopup" class="popup-btn">Show Popup</button>
     </div>
   </div>
 
@@ -140,6 +171,7 @@ export default {
           <td>{{ item.pts }}</td>
         </tr>
       </table>
+      <button @click="showPopup2" class="popup-btn">Show Popup</button>
     </div>
   </div>
 
@@ -170,6 +202,7 @@ export default {
           <td>{{ item.pts }}</td>
         </tr>
       </table>
+      <button @click="showPopup3" class="popup-btn">Show Popup</button>
     </div>
   </div>
 
@@ -177,6 +210,9 @@ export default {
 </template>
 
 <style scoped>
+#groupB {
+  margin-bottom: 1%;
+}
 #nav {
   position: absolute;
   display: flex;
@@ -282,10 +318,13 @@ export default {
   border-radius: 7px;
 }
 .popup-btn {
+  position: absolute;
   margin-top: 10px;
   cursor: pointer;
   background-color: brown;
-  top: 0%
+  bottom: 0%;
+  align-items: center;
+  
   /* Add more styles as needed */
 }
 
