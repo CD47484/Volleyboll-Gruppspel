@@ -64,10 +64,13 @@ export default {
         title: "Grupp A",
         content: "An example popup. Supports multiple lines.",
         CSS: `
-            .popup-content {
-                top: 0% ;
-                bottom: 0% ;
-            }`
+        .popup.GruppA .popup-content {
+          background-color: #ffffff;
+          width: min(770px, 90vw);
+          height: 95% !important;
+          border-radius: 15px;
+          border: 0 solid #000000;
+        }`
       });
       myPopup.show();
     },
@@ -208,9 +211,6 @@ export default {
 </template>
 
 <style scoped>
-#groupB {
-  margin-bottom: 1%;
-}
 #nav {
   position: absolute;
   display: flex;
@@ -315,22 +315,18 @@ export default {
   background-color: brown;
   bottom: 0%;
   align-items: center;
-  
-  /* Add more styles as needed */
 }
 
-/* Apply border to the table and its cells */
 table {
   width: 100%;
-  border-collapse: collapse; /* Collapses borders between table cells */
+  border-collapse: collapse; 
+  margin: 10px;
 }
 
-/* Apply horizontal border to table header and table rows */
 th, tr {
   border-bottom: 1px solid black;
 }
 
-/* Remove right border from the last header cell and last data cell in each row */
 th:last-child, td:last-child, tr:last-child {
   border-right: none;
 }
