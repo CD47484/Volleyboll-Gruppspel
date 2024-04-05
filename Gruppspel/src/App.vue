@@ -7,6 +7,8 @@ export default {
       isVisible: false,
       isVisible2: false,
       isVisible3: false,
+      isVisible4: false,
+      isVisible5: false,
       groupAData: [
         { pos: 1, team: 'IT23', p: 5, w: 4, l: 0, pd: '61/15', pts: 13 },//Fetch in namn, hur många matcher de spelat, vunnit, förlorat, poäng för, poäng mot räknar ut poäng skillnad, poäng
         { pos: 2, team: 'Merk23', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
@@ -14,23 +16,52 @@ export default {
         { pos: 4, team: 'Serv23', p: 5, w: 4, l: 0, pd: 61, pts: 2 },
       ],
       groupBData: [
+        { pos: 1, team: 'IT21', p: 5, w: 4, l: 0, pd: 61, pts: 13 },
+        { pos: 2, team: 'Merk21', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
+        { pos: 3, team: 'Kock21', p: 5, w: 4, l: 0, pd: 61, pts: 4 },
+        { pos: 4, team: 'Serv21', p: 5, w: 4, l: 0, pd: 61, pts: 1 },
+      ],
+      groupCData: [
         { pos: 1, team: 'IT22', p: 5, w: 3, l: 1, pd: 19, pts: 14 },
         { pos: 2, team: 'Merk22', p: 5, w: 4, l: 0, pd: 61, pts: 8 },
         { pos: 3, team: 'Kock22', p: 5, w: 4, l: 0, pd: 61, pts: 5 },
         { pos: 4, team: 'Serv22', p: 5, w: 4, l: 0, pd: 61, pts: 2 },
       ],
-      groupCData: [
-        { pos: 1, team: 'IT21', p: 5, w: 4, l: 0, pd: 61, pts: 13 },
-        { pos: 2, team: 'Merk21', p: 5, w: 4, l: 0, pd: 61, pts: 10 },
-        { pos: 3, team: 'Kock21', p: 5, w: 4, l: 0, pd: 61, pts: 4 },
-        { pos: 4, team: 'Serv21', p: 5, w: 4, l: 0, pd: 61, pts: 1 },
+      groupDData: [
+        { pos: null, team: null, p: null, w: null, l: null, pd: null, pts: null },
+        { pos: null, team: null, p: null, w: null, l: null, pd: null, pts: null },
+        { pos: null, team: null, p: null, w: null, l: null, pd: null, pts: null },
+      ],
+      groupEData: [
+        { pos: null, team: null, p: null, w: null, l: null, pd: null, pts: null },
+        { pos: null, team: null, p: null, w: null, l: null, pd: null, pts: null },
+        { pos: null, team: null, p: null, w: null, l: null, pd: null, pts: null },
       ]
     };
+  },
+  computed: {
+    validGroupAData() {
+      return this.groupAData.filter(item => item.team !== null);
+    },
+    validGroupBData() {
+      return this.groupBData.filter(item => item.team !== null);
+    },
+    validGroupCData() {
+      return this.groupCData.filter(item => item.team !== null);
+    },
+    validGroupDData() {
+      return this.groupDData.filter(item => item.team !== null);
+    },
+    validGroupEData() {
+      return this.groupEData.filter(item => item.team !== null);
+    },
   },
   mounted() {
     this.populateTable('groupA', this.groupAData);
     this.populateTable('groupB', this.groupBData);
     this.populateTable('groupC', this.groupCData);
+    this.populateTable('groupD', this.groupDData);
+    this.populateTable('groupE', this.groupEData);
   },
   methods: {
     toggleVisibility() {
@@ -41,6 +72,12 @@ export default {
     },
     toggleVisibility3() {
       this.isVisible3 = !this.isVisible3;
+    },
+    toggleVisibility4() {
+      this.isVisible4 = !this.isVisible4;
+    },
+    toggleVisibility5() {
+      this.isVisible5 = !this.isVisible5;
     },
     populateTable(tableId, data) {
     this.$nextTick(() => {
@@ -64,10 +101,13 @@ export default {
         title: "Grupp A",
         content: "An example popup. Supports multiple lines.",
         CSS: `
-            .popup-content {
-                top: 0% ;
-                bottom: 0% ;
-            }`
+        .popup.GruppA .popup-content {
+          background-color: #ffffff;
+          width: min(770px, 90vw);
+          height: 95% !important;
+          border-radius: 15px;
+          border: 0 solid #000000;
+        }`
       });
       myPopup.show();
     },
@@ -96,6 +136,32 @@ export default {
             }`
       });
       myPopup3.show();
+    },
+    showPopup4() {
+      const myPopup4 = new Popup({
+        id: "GruppD",
+        title: "Grupp D",
+        content: "An example popup. Supports multiple lines.",
+        CSS: `
+            .popup-content {
+                top: 0% ;
+                bottom: 0% ;
+            }`
+      });
+      myPopup4.show();
+    },
+    showPopup4() {
+      const myPopup4 = new Popup({
+        id: "GruppD",
+        title: "Grupp D",
+        content: "An example popup. Supports multiple lines.",
+        CSS: `
+            .popup-content {
+                top: 0% ;
+                bottom: 0% ;
+            }`
+      });
+      myPopup4.show();
     }
   }
 }
@@ -113,8 +179,8 @@ export default {
     <button class="search-btn">&#x1F50E</button>
   </div>
 
-  <div>
-    <button @click="toggleVisibility" class="group-container">
+  <div v-if="validGroupAData.length > 0">
+    <button @click="toggleVisibility" class="group-container" v-if="groupAData && groupAData.length > 0">
       <h3 class="Grupper">Grupp A</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
@@ -144,8 +210,8 @@ export default {
     </div>
   </div>
 
-  <div>
-    <button @click="toggleVisibility2" class="group-container">
+  <div v-if="validGroupBData.length > 0">
+    <button @click="toggleVisibility2" class="group-container" v-if="groupBData && groupBData.length > 0">
       <h3 class="Grupper">Grupp B</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
@@ -175,8 +241,8 @@ export default {
     </div>
   </div>
 
-  <div>
-    <button @click="toggleVisibility3" class="group-container">
+  <div v-if="validGroupCData.length > 0">
+    <button @click="toggleVisibility3" class="group-container" v-if="groupCData && groupCData.length > 0">
       <h3 class="Grupper">Grupp C</h3> <!--fetchar in grupperna-->
       <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
       <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
@@ -203,6 +269,130 @@ export default {
         </tr>
       </table>
       <button @click="showPopup3" class="popup-btn">Mer</button>
+    </div>
+  </div>
+
+  <div v-if="validGroupDData.length > 0">
+    <button @click="toggleVisibility4" class="group-container" v-if="groupDData && groupDData.length > 0">
+      <h3 class="Grupper">Grupp D</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+    </button>
+    <div v-if="isVisible4" class="group-dropdown">
+      <table id="groupD">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+        <tr v-for="item in groupDData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
+      <button @click="showPopup4" class="popup-btn">Show Popup</button>
+    </div>
+  </div>
+
+    <div v-if="validGroupEData.length > 0">
+    <button @click="toggleVisibility5" class="group-container">
+      <h3 class="Grupper">Grupp E</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+    </button>
+    <div v-if="isVisible5" class="group-dropdown">
+      <table id="groupE">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+        <tr v-for="item in groupEData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
+      <button @click="showPopup5" class="popup-btn">Show Popup</button>
+    </div>
+  </div>
+
+  <div v-if="validGroupDData.length > 0">
+    <button @click="toggleVisibility4" class="group-container" v-if="groupDData && groupDData.length > 0">
+      <h3 class="Grupper">Grupp D</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+    </button>
+    <div v-if="isVisible4" class="group-dropdown">
+      <table id="groupD">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+        <tr v-for="item in groupDData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
+      <button @click="showPopup4" class="popup-btn">Show Popup</button>
+    </div>
+  </div>
+
+    <div v-if="validGroupEData.length > 0">
+    <button @click="toggleVisibility5" class="group-container">
+      <h3 class="Grupper">Grupp E</h3> <!--fetchar in grupperna-->
+      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
+      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
+    </button>
+    <div v-if="isVisible5" class="group-dropdown">
+      <table id="groupE">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+        <tr v-for="item in groupEData" :key="item.pos">
+          <td>{{ item.pos }}</td>
+          <td>{{ item.team }}</td>
+          <td>{{ item.p }}</td>
+          <td>{{ item.w }}</td>
+          <td>{{ item.l }}</td>
+          <td>{{ item.pd }}</td>
+          <td>{{ item.pts }}</td>
+        </tr>
+      </table>
+      <button @click="showPopup5" class="popup-btn">Show Popup</button>
     </div>
   </div>
 
@@ -329,18 +519,16 @@ export default {
   /* Add more styles as needed */
 }
 
-/* Apply border to the table and its cells */
 table {
   width: 100%;
-  border-collapse: collapse; /* Collapses borders between table cells */
+  border-collapse: collapse; 
+  margin: 10px;
 }
 
-/* Apply horizontal border to table header and table rows */
 th, tr {
   border-bottom: 1px solid black;
 }
 
-/* Remove right border from the last header cell and last data cell in each row */
 th:last-child, td:last-child, tr:last-child {
   border-right: none;
 }
