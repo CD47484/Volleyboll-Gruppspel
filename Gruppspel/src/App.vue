@@ -508,7 +508,7 @@ export default {
 }
 .popup-btn {
   position: relative;
-  margin-top: 3%;
+  margin-top: 2%;
   margin-bottom: 2%;
   cursor: pointer;
   background-color: grey;
