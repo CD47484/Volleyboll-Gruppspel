@@ -1,4 +1,4 @@
-<script>
+<script scope>
 
 export default {
   name: 'App',
@@ -100,14 +100,6 @@ export default {
         id: "GruppA",
         title: "Grupp A",
         content: "An example popup. Supports multiple lines.",
-        CSS: `
-        .popup.GruppA .popup-content {
-          background-color: #ffffff;
-          width: min(770px, 90vw);
-          height: 95% !important;
-          border-radius: 15px;
-          border: 0 solid #000000;
-        }`
       });
       myPopup.show();
     },
@@ -116,11 +108,6 @@ export default {
         id: "GruppB",
         title: "Grupp B",
         content: "An example popup. Supports multiple lines.",
-        CSS: `
-            .popup-content {
-                top: 0% ;
-                bottom: 0% ;
-            }`
       });
       myPopup2.show();
     },
@@ -129,11 +116,6 @@ export default {
         id: "GruppC",
         title: "Grupp C",
         content: "An example popup. Supports multiple lines.",
-        CSS: `
-            .popup-content {
-                top: 0% ;
-                bottom: 0% ;
-            }`
       });
       myPopup3.show();
     },
@@ -142,11 +124,6 @@ export default {
         id: "GruppD",
         title: "Grupp D",
         content: "An example popup. Supports multiple lines.",
-        CSS: `
-            .popup-content {
-                top: 0% ;
-                bottom: 0% ;
-            }`
       });
       myPopup4.show();
     },
@@ -155,11 +132,6 @@ export default {
         id: "GruppD",
         title: "Grupp D",
         content: "An example popup. Supports multiple lines.",
-        CSS: `
-            .popup-content {
-                top: 0% ;
-                bottom: 0% ;
-            }`
       });
       myPopup4.show();
     }
