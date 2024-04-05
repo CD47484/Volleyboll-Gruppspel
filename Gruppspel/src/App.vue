@@ -140,7 +140,7 @@ export default {
           <td>{{ item.pts }}</td>
         </tr>
       </table>
-      <button @click="showPopup" class="popup-btn">Show Popup</button>
+      <button @click="showPopup" class="popup-btn">Mer</button>
     </div>
   </div>
 
@@ -171,7 +171,7 @@ export default {
           <td>{{ item.pts }}</td>
         </tr>
       </table>
-      <button @click="showPopup2" class="popup-btn">Show Popup</button>
+      <button @click="showPopup2" class="popup-btn">Mer</button>
     </div>
   </div>
 
@@ -202,7 +202,7 @@ export default {
           <td>{{ item.pts }}</td>
         </tr>
       </table>
-      <button @click="showPopup3" class="popup-btn">Show Popup</button>
+      <button @click="showPopup3" class="popup-btn">Mer</button>
     </div>
   </div>
 
@@ -210,9 +210,6 @@ export default {
 </template>
 
 <style scoped>
-#groupB {
-  margin-bottom: 1%;
-}
 #nav {
   position: absolute;
   display: flex;
@@ -229,7 +226,9 @@ export default {
   bottom: 0%;
   left: 0%;
   right: 0%;
-  background-color: darkblue;
+  height: fit-content;
+  min-height: 90%;
+  background-color: rgb(97, 97, 118);
 }
 .Grupper{
   position: relative;
@@ -257,7 +256,6 @@ export default {
   margin-bottom: 1.5%;
   height: 10%;
   width: 80%;
-  align-items: center;
   background-color: white;
   border-radius: 10px;
   
@@ -269,7 +267,6 @@ export default {
   margin-bottom: 5%;
   height: fit-content;
   width: 80%;
-  align-items: center;
   background-color: white;
   color: black;
   border-radius: 10px;
@@ -285,9 +282,11 @@ export default {
 .hamburger{
   background-image: url(./assets/hamburger.png);
   position: relative;
-  width: 54px;
-  height: 47px;
-  left: 69%;
+  width: 50px;
+  height: 43px;
+  left: 80%;
+  background-color: transparent;
+  border:none;
 }
 .search-container {
   position: relative;
@@ -318,13 +317,15 @@ export default {
   border-radius: 7px;
 }
 .popup-btn {
-  position: absolute;
-  margin-top: 10px;
+  position: relative;
+  margin-top: 3%;
+  margin-bottom: 2%;
   cursor: pointer;
-  background-color: brown;
+  background-color: grey;
   bottom: 0%;
-  align-items: center;
-  
+  left: 35%; 
+  width: 30%; 
+  border-radius: 7px;
   /* Add more styles as needed */
 }
 
