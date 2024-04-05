@@ -522,7 +522,7 @@ export default {
 table {
   width: 100%;
   border-collapse: collapse; 
-  margin: 10px;
+  margin-bottom: 10px;
 }
 
 th, tr {
