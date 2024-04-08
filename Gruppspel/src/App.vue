@@ -134,6 +134,14 @@ export default {
         content: this.$refs.groupETemplate.innerHTML,
       });
       myPopup4.show();
+    },
+    Nav_burgur() {
+      const myPopup4 = new Popup({
+        id: "Burger",
+        title: "WOW",
+        content: "HEJ",
+      });
+      myPopup4.show();
     }
   }
 }
@@ -141,7 +149,7 @@ export default {
 
 <template>
   <nav id="nav">
-    <button class="hamburger"></button>   
+    <button class="hamburger" @click="Nav_burgur"></button>   
   </nav>
 
   <main id="main">
