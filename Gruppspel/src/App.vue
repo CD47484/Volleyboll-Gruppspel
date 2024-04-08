@@ -99,7 +99,7 @@ export default {
       const myPopup = new Popup({
         id: "GruppA",
         title: "Grupp A",
-        content: "An example popup. Supports multiple lines.",
+        content: this.$refs.groupATemplate.innerHTML,
       });
       myPopup.show();
     },
@@ -107,7 +107,7 @@ export default {
       const myPopup2 = new Popup({
         id: "GruppB",
         title: "Grupp B",
-        content: "An example popup. Supports multiple lines.",
+        content: this.$refs.groupBTemplate.innerHTML,
       });
       myPopup2.show();
     },
@@ -115,7 +115,7 @@ export default {
       const myPopup3 = new Popup({
         id: "GruppC",
         title: "Grupp C",
-        content: "An example popup. Supports multiple lines.",
+        content: this.$refs.groupCTemplate.innerHTML,
       });
       myPopup3.show();
     },
@@ -123,15 +123,15 @@ export default {
       const myPopup4 = new Popup({
         id: "GruppD",
         title: "Grupp D",
-        content: "An example popup. Supports multiple lines.",
+        content: this.$refs.groupDTemplate.innerHTML,
       });
       myPopup4.show();
     },
     showPopup4() {
       const myPopup4 = new Popup({
-        id: "GruppD",
-        title: "Grupp D",
-        content: "An example popup. Supports multiple lines.",
+        id: "GruppE",
+        title: "Grupp E",
+        content: this.$refs.groupETemplate.innerHTML,
       });
       myPopup4.show();
     }
@@ -148,7 +148,13 @@ export default {
 
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Search..">
-    <button class="search-btn">&#x1F50E</button>
+    <button class="search-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+        <path d="M21 21l-6 -6" />
+      </svg>
+    </button>
   </div>
 
   <div v-if="validGroupAData.length > 0">
@@ -181,6 +187,19 @@ export default {
       <button @click="showPopup" class="popup-btn">Mer</button>
     </div>
   </div>
+  <div ref="groupATemplate" style="display: none;">
+    <table id="groupA">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+      </table>
+  </div>
 
   <div v-if="validGroupBData.length > 0">
     <button @click="toggleVisibility2" class="group-container" v-if="groupBData && groupBData.length > 0">
@@ -212,6 +231,20 @@ export default {
       <button @click="showPopup2" class="popup-btn">Mer</button>
     </div>
   </div>
+  <div ref="groupBTemplate" style="display: none;">
+    <table id="groupB">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+      </table>
+  </div>
+
 
   <div v-if="validGroupCData.length > 0">
     <button @click="toggleVisibility3" class="group-container" v-if="groupCData && groupCData.length > 0">
@@ -243,15 +276,8 @@ export default {
       <button @click="showPopup3" class="popup-btn">Mer</button>
     </div>
   </div>
-
-  <div v-if="validGroupDData.length > 0">
-    <button @click="toggleVisibility4" class="group-container" v-if="groupDData && groupDData.length > 0">
-      <h3 class="Grupper">Grupp D</h3> <!--fetchar in grupperna-->
-      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
-    </button>
-    <div v-if="isVisible4" class="group-dropdown">
-      <table id="groupD">
+  <div ref="groupCTemplate" style="display: none;">
+    <table id="groupC">
         <tr>
           <th>POS</th>
           <th>LAG</th>
@@ -261,49 +287,7 @@ export default {
           <th>PS</th>
           <th>POÄ</th>
         </tr>
-        <tr v-for="item in groupDData" :key="item.pos">
-          <td>{{ item.pos }}</td>
-          <td>{{ item.team }}</td>
-          <td>{{ item.p }}</td>
-          <td>{{ item.w }}</td>
-          <td>{{ item.l }}</td>
-          <td>{{ item.pd }}</td>
-          <td>{{ item.pts }}</td>
-        </tr>
       </table>
-      <button @click="showPopup4" class="popup-btn">Show Popup</button>
-    </div>
-  </div>
-
-    <div v-if="validGroupEData.length > 0">
-    <button @click="toggleVisibility5" class="group-container">
-      <h3 class="Grupper">Grupp E</h3> <!--fetchar in grupperna-->
-      <p class="lag">IT21, IT23, IT22, IT24</p> <!--fetchar in lagen-->
-      <img class="pil" src="./assets/pngwing2.png" alt="dropdown-pil">
-    </button>
-    <div v-if="isVisible5" class="group-dropdown">
-      <table id="groupE">
-        <tr>
-          <th>POS</th>
-          <th>LAG</th>
-          <th>S</th>
-          <th>V</th>
-          <th>F</th>
-          <th>PS</th>
-          <th>POÄ</th>
-        </tr>
-        <tr v-for="item in groupEData" :key="item.pos">
-          <td>{{ item.pos }}</td>
-          <td>{{ item.team }}</td>
-          <td>{{ item.p }}</td>
-          <td>{{ item.w }}</td>
-          <td>{{ item.l }}</td>
-          <td>{{ item.pd }}</td>
-          <td>{{ item.pts }}</td>
-        </tr>
-      </table>
-      <button @click="showPopup5" class="popup-btn">Show Popup</button>
-    </div>
   </div>
 
   <div v-if="validGroupDData.length > 0">
@@ -336,6 +320,19 @@ export default {
       <button @click="showPopup4" class="popup-btn">Show Popup</button>
     </div>
   </div>
+  <div ref="groupDTemplate" style="display: none;">
+    <table id="groupD">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+      </table>
+  </div>
 
     <div v-if="validGroupEData.length > 0">
     <button @click="toggleVisibility5" class="group-container">
@@ -367,7 +364,19 @@ export default {
       <button @click="showPopup5" class="popup-btn">Show Popup</button>
     </div>
   </div>
-
+  <div ref="groupETemplate" style="display: none;">
+    <table id="groupE">
+        <tr>
+          <th>POS</th>
+          <th>LAG</th>
+          <th>S</th>
+          <th>V</th>
+          <th>F</th>
+          <th>PS</th>
+          <th>POÄ</th>
+        </tr>
+      </table>
+  </div>
   </main>
 </template>
 
