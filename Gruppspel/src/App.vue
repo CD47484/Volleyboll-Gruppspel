@@ -145,7 +145,6 @@ export default {
   </nav>
 
   <main id="main">
-<div id="bakgrund">
   <div class="search-container">
     <input type="text" class="search-input" placeholder="Search..">
     <button class="search-btn">
@@ -377,18 +376,10 @@ export default {
         </tr>
       </table>
   </div>
-
-  </div>
   </main>
 </template>
 
 <style scoped>
-#bakgrund{
-  background-image: url(./assets/beach.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 #nav {
   position: absolute;
   display: flex;
@@ -407,7 +398,9 @@ export default {
   right: 0%;
   height: fit-content;
   min-height: 90%;
-  background-image: url(./assets/beach.png);
+  background-image: url(./assets/Bakgrundsbild.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Grupper{
   position: relative;
