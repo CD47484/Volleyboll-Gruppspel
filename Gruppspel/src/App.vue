@@ -195,7 +195,8 @@ export default {
     </div>
   </div>
   <div ref="groupATemplate" style="display: none;">
-    <table id="groupA">
+    <div>
+      <table id="groupA">
         <tr>
           <th>POS</th>
           <th>LAG</th>
@@ -206,6 +207,10 @@ export default {
           <th>POÄ</th>
         </tr>
       </table>
+    </div>
+    <div id="nasta_match">
+      Hej Test av ny match
+    </div>
   </div>
 
   <div v-if="validGroupBData.length > 0">
@@ -507,6 +512,17 @@ export default {
   width: 30%; 
   border-radius: 7px;
   /* Add more styles as needed */
+}
+
+#nasta_match {
+  position: relative;
+  left: 5%;
+  margin: 5%;
+  margin-bottom: 1.5%;
+  height: 25%;
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
 }
 
 table {
