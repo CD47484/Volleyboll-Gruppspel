@@ -247,7 +247,7 @@ export default {
     <table id="groupB">
         <tr>
           <th>POS</th>
-          <th>LAG</th>
+          <th>LAG</th> 
           <th>S</th>
           <th>V</th>
           <th>F</th>
@@ -495,7 +495,7 @@ export default {
   position: relative;
   right: -5.2%;
   margin: -5%;
-  top: 5%;
+  top: 18%;
   height: 30px;
   width: 15%;
   align-items: center;
@@ -540,5 +540,29 @@ th:last-child, td:last-child, tr:last-child {
 }
 td {
   text-align: center;
+}
+@media (min-width: 600px) {
+  #nav {
+    position: absolute;
+    display: flex;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    height: 16%;
+    align-items: center;
+    background-color: darkgreen;
+  }
+  #main{
+    position: absolute;
+    top: 16%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    height: fit-content;
+    min-height: 90%;
+    background-image: url(./assets/Bakgrundsbild.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 </style>
