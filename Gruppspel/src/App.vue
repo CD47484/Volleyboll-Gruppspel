@@ -516,13 +516,10 @@ export default {
 
 #nasta_match {
   position: relative;
-  left: 5%;
   margin: 5%;
   margin-bottom: 1.5%;
   height: 25%;
-  width: 80%;
-  background-color: white;
-  border-radius: 10px;
+  width: 90%;
 }
 
 table {
